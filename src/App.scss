@@ -5,6 +5,7 @@
   src: url("./assets/fonts/Inter\ Desktop/Inter-Medium.otf") format("truetype");
 }
 
+$footer-height: 50px;
 * {
   margin: 0;
   padding: 0;
@@ -14,7 +15,16 @@
 
 body {
   background: #0f0e0e;
-  overflow-x: hidden;
+}
+
+.payment-root {
+  height: 100vh;
+  display: flex;
+  background: #0f0e0e;
+  flex-direction: column;
+  @media screen and (max-width: 400px) {
+    height: auto;
+  }
 }
 
 .app {
@@ -24,6 +34,7 @@ body {
 
 .payment-container {
   padding: 1rem !important;
+  flex-grow: 2 !important;
 }
 
 // Material UI CSS
@@ -170,9 +181,6 @@ body {
 // Footer CSS
 
 .footer-wrapper {
-  margin-top: 30%;
-  position: absolute;
-  bottom: 10px;
   .MuiGrid-root {
     display: flex !important;
     flex-direction: row !important;
@@ -181,12 +189,6 @@ body {
       flex-direction: column !important;
       align-items: center !important;
     }
-  }
-  @media screen and (max-width: 1224px) {
-    position: unset;
-  }
-  @media screen and (max-width: 468px) {
-    position: unset;
   }
 }
 
@@ -208,8 +210,6 @@ body {
 .success {
   justify-content: center;
   align-items: center;
-  // height: 100vh;
-  // min-width: 100%;
 }
 .success-container {
   justify-content: center;
