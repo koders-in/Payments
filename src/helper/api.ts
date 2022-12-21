@@ -1,9 +1,9 @@
-import Axios, { AxiosResponse } from "axios";
+import Axios from "axios";
 
 type Endpoint = "/get-project" | "/get-budget" | "/checkout" | "/coupon";
 
 const client = Axios.create({
-  baseURL: "http://localhost:9442",
+  baseURL: "https://api.koders.in",
   headers: {
     "Content-Type": "application/json",
   },
@@ -14,10 +14,7 @@ interface Props {
   payload: any;
 }
 
-export const sendPayload = async ({
-  endpoint,
-  payload,
-}: Props): Promise<AxiosResponse> => {
+export const sendPayload = async ({ endpoint, payload }: Props) => {
   try {
     return await client.post(endpoint, payload);
   } catch (error: any) {

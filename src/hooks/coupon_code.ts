@@ -24,10 +24,11 @@ export const useCouponCodeHook = () => {
       } else if (status === 201) {
         showToaster(data.msg, "error");
       }
+
       return null;
     } catch (e: any) {
       console.log(
-        `Something went wrong while  applying coupon. Reason-${e.message}`
+        `Something went wrong while applying coupon. Reason-${e.message}`
       );
     }
   };
