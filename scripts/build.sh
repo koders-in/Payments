@@ -7,6 +7,6 @@ fi
 
 cd ..
 docker build -t payments-frontend .
-docker run -d -p 9441:3000 --name payments-frontend payments-frontend
+docker run -d -p 9441:80 --name payments-frontend payments-frontend
 
 
