@@ -11,14 +11,6 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Install dependencies
-        run: |
-          npm install          
-
-      - name: Build website
-        run: |
-          npm run build          
-
       - name: Copy files to server
         uses: appleboy/scp-action@v0.1.7
         with:
@@ -26,7 +18,7 @@ jobs:
           username: xhunter
           password: ${{secrets.HOST_PASSWORD}}
           port: 22
-          source: "build scripts Dockerfile"
+          source: "."
           target: "/home/xhunter/payments/payments-frontend"
 
       - name: Deploying container
